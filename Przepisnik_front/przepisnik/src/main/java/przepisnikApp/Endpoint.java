@@ -39,7 +39,6 @@ public class Endpoint extends DBConnection{
     @GetMapping("/")
     @ResponseBody
     public List<String> endpoint(){
-
         List<String> lista = select();
         return lista;
     }
