@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-cmap
+  labels:
+    app: db-deploy
+data:
+  POSTGRES_DB: przepisnik

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-svc
+  labels:
+    app: db-deploy
+spec:
+  type: NodePort
+  ports:
+   - port: 5432
+  selector:
+   app: db-deploy
