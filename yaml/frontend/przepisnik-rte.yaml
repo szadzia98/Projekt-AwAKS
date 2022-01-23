@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app: front-deploy
+  name: front-rt
+spec:
+  host: "przepisnik.apps.cp4apps.cloudpak.site"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: front-svc
+    weight: 100

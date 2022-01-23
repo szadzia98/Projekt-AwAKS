@@ -5,7 +5,7 @@ metadata:
 spec:
   storageClassName: managed-nfs-storage
   accessModes:
-    - ReadWriteMany
+  - ReadWriteMany
   volumeMode: Filesystem
   resources:
     requests:

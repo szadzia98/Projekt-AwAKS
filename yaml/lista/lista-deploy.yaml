@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: lista-deploy
+  name: lista-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lista-deploy
+  template:
+    metadata:
+      labels:
+        app: lista-deploy
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/lista:1.0
+        name: lista-deploy
+        ports:
+        - containerPort: 8080
+      env:
+        - name: USER_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: USER_DB
+        - name: PASSWORD_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: PASSWORD_DB
+status: {}

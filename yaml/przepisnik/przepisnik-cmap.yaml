@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: przepisnik-cmap
+  labels:
+    app: przepisnik-deploy
+data:
+  PORT: 8080
+  LISTA_URL: 
+  OPIS_URL:
+  DB_URL: 

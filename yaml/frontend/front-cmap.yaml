@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: front-cmap
+  labels:
+    app: front-deploy
+data:
+  PORT: 8080
+  BACK_URL: 

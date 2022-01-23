@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: front-deploy
+  name: front-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-deploy
+  template:
+    metadata:
+      labels:
+        app: front-deploy
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/frontend:1.0
+        name: front-deploy
+        ports:
+        - containerPort: 8080
+status: {}

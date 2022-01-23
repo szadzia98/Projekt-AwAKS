@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: przepisnik-deploy
+  name: przepisnik-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: przepisnik-deploy
+  template:
+    metadata:
+      labels:
+        app: przepisnik-deploy
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/przepisnik:1.0
+        name: przepisnik-deploy
+        ports:
+        - containerPort: 8080
+      env:
+        - name: USER_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: USER_DB
+        - name: PASSWORD_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: PASSWORD_DB
+status: {}

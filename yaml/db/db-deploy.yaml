@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: app/v1
 kind: Deployment
 metadata:
   labels:
@@ -15,20 +15,20 @@ spec:
         app: db-deploy
     spec:
       containers:
-        - name: postgres
-          image: postgres:14.1
-          imagePullPolicy: "IfNotPresent"
-          ports:
-            - containerPort: 5432
-          envFrom:
-            - configMapRef:
-                name: db-cmap
-          volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgredb
-          resources: {}
-      volumes:
-        - name: postgredb
-          persistentVolumeClaim:
-            claimName: db-pvc
+      - name: db-deploy
+        image: image-registry.openshift-image-registry.svc:5000/labproj22/postgres:14.1
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5432
+        envFrom:
+        - configMapRef:
+            name: db-cmap
+        volumeMounts:
+        - mountPath: /
+          name: postgredb
+        resources: {}
+    volumes:
+    - name: postgredb
+      persistentVolumeClaim:
+        claimName: db-pvc
 status: {}
