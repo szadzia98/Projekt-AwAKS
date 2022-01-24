@@ -25,7 +25,7 @@ spec:
         - configMapRef:
             name: db-cmap
         env:
-        - name: USER_DB
+        - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
               name: db-secret
