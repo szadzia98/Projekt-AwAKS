@@ -4,4 +4,4 @@ metadata:
   name: lo-cmap
 data:
   PORT: "8080"
-  DB_URL: "jdbc:postgresql://172.30.198.190:5432/przepisnik"
+  DB_URL: "jdbc:postgresql://db-svc.labproj22.svc.cluster.local:5432/przepisnik"
