@@ -37,8 +37,7 @@ spec:
               key: PASSWORD_DB
         volumeMounts:
         - mountPath: /
-          name: postgredb
-        
+          name: postgredb  
       volumes:
       - name: postgredb
         persistentVolumeClaim:
