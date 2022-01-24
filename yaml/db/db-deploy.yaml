@@ -20,7 +20,7 @@ spec:
         image: image-registry.openshift-image-registry.svc:5000/labproj22/postgres:14.1
         resources: {}
         ports:
-        - containerPort: 5431
+        - containerPort: 5432
         envFrom:
         - configMapRef:
             name: db-cmap
