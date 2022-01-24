@@ -20,7 +20,7 @@ spec:
         image: image-registry.openshift-image-registry.svc:5000/labproj22/postgres:14.1
         resources: {}
         ports:
-        - containerPort: 5432
+        - containerPort: 5431
         envFrom:
         - configMapRef:
             name: db-cmap
@@ -36,7 +36,7 @@ spec:
               name: db-secret
               key: PASSWORD_DB
         volumeMounts:
-        - mountPath: /
+        - mountPath: /data
           name: postgredb  
       volumes:
       - name: postgredb
