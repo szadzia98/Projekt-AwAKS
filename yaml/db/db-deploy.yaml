@@ -38,8 +38,8 @@ spec:
         - mountPath: /
           name: postgredb
         resources: {}
-    volumes:
-    - name: postgredb
-      persistentVolumeClaim:
-        claimName: db-pvc
+      volumes:
+      - name: postgredb
+        persistentVolumeClaim:
+          claimName: db-pvc
 status: {}
