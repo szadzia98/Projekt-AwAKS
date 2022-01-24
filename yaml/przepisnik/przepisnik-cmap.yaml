@@ -6,6 +6,6 @@ metadata:
     app: przepisnik-deploy
 data:
   PORT: 8080
-  LISTA_URL: 
-  OPIS_URL:
-  DB_URL: 
+  LISTA_URL: "http://172.30.172.223/"
+  OPIS_URL: "http://172.30.243.30/"
+  DB_URL: "jdbc:postgresql://db-svc.labproj22.svc.cluster.local:5432/przepisnik"
