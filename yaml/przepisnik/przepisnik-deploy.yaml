@@ -19,7 +19,10 @@ spec:
         name: przepisnik-deploy
         ports:
         - containerPort: 8080
-      env:
+        envFrom:
+        - configMapRef:
+            name: przepisnik-cmap
+        env:
         - name: USER_DB
           valueFrom:
             secretKeyRef:

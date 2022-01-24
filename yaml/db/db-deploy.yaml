@@ -23,6 +23,17 @@ spec:
         envFrom:
         - configMapRef:
             name: db-cmap
+        env:
+        - name: USER_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: USER_DB
+        - name: PASSWORD_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: PASSWORD_DB
         volumeMounts:
         - mountPath: /
           name: postgredb

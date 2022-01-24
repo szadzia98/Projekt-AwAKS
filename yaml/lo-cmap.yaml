@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: lista-cmap
-  labels:
-    app: lista-deploy
+  name: lo-cmap
 data:
   PORT: 8080
   DB_URL: 

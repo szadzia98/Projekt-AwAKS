@@ -19,7 +19,10 @@ spec:
         name: lista-deploy
         ports:
         - containerPort: 8080
-      env:
+        envFrom:
+        - configMapRef:
+            name: lo-cmap
+        env:
         - name: USER_DB
           valueFrom:
             secretKeyRef:
