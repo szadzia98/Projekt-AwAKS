@@ -26,6 +26,6 @@ spec:
         - name: USER_DB
           valueFrom:
             secretKeyRef:
-              name: secret_user
+              name: secret-user
               key: USER_DB
 status: {}
