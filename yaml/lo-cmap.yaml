@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: lo-cmap
 data:
-  PORT: 8080
-  DB_URL: jdbc:postgresql://172.30.198.190:5432/przepisnik
+  PORT: "8080"
+  DB_URL: "jdbc:postgresql://172.30.198.190:5432/przepisnik"
