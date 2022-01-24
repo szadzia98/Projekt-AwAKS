@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: lista-deploy
-  name: lista-deploy-user
+  name: temp-deploy
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/labproj22/lista:1.0
-        name: lista-deploy-user
+        name: temp-deploy
         ports:
         - containerPort: 8080
         envFrom:
