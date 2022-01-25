@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app: przepisnik-deploy
+  name: przepisnik-back
+spec:
+  host: ""
+  port:
+    targetPort: 3000
+  to:
+    kind: Service
+    name: przepisnik-svc
+    weight: 100
