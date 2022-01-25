@@ -16,18 +16,22 @@ const Home: BlitzPage = () => {
     if (Lista.length > 0) {
       return 1
     } else {
-      fetch("http://" + process.env.BACK_URL as any)
-        .then((res) => res.json())
-        .then((items) =>
-          items.map((i, idx) => {
-            return (
-              <li key={Math.random()} onClick={() => Kliknij(idx + 1)}>
-                {i}
-              </li>
-            )
-          })
-        )
-        .then((x) => setLista(x))
+      try{
+        fetch("http://" + process.env.BACK_URL as any)
+          .then((res) => res.json())
+          .then((items) =>
+            items.map((i, idx) => {
+              return (
+                <li key={Math.random()} onClick={() => Kliknij(idx + 1)}>
+                  {i}
+                </li>
+              )
+            })
+          )
+          .then((x) => setLista(x))
+        }catch{
+        console.log(Error)
+      }
     }
   }
 
