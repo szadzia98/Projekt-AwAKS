@@ -37,7 +37,7 @@ const Home: BlitzPage = () => {
       .then((res) => res.text())
       .then((d) => setSklad(d)
       )
-    fetch(process.env.OPIS_URL + idx)
+    fetch(process.env.OPIS_URL as any + idx)
       .then((res) => res.text())
       .then((d) => setOpis(d)
       )
