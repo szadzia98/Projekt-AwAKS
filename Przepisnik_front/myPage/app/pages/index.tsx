@@ -13,6 +13,7 @@ const Home: BlitzPage = () => {
   GenerujListe()
 
   function GenerujListe() {
+    console.log(process.env)
     if(process.env.BACK_URL === undefined){
       return 1
     }
