@@ -15,7 +15,7 @@ spec:
         app: lista-deploy
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/labproj22/lista:1.0
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/lista:1.1
         name: lista-deploy
         ports:
         - containerPort: 8080
