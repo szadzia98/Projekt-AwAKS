@@ -5,5 +5,3 @@ metadata:
 data:
   PORT: "8080"
   DB_URL: "jdbc:postgresql://db-svc.labproj22.svc.cluster.local:5432/przepisnik"
-  USER_DB: "postgres"
-  PASSWORD_DB: "123"
