@@ -1,5 +1,4 @@
-import { Image, BlitzPage } from "blitz"
-import logo from "public/logo.png"
+import { BlitzPage } from "blitz"
 import { useState } from "react"
 /*
  * This file is just for a pleasant getting started page for your new app.
