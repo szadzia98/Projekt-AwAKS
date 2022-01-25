@@ -17,7 +17,7 @@ const Home: BlitzPage = () => {
     if (Lista.length > 0) {
       return 1
     } else {
-      fetch(process.env.BACK_URL)
+      fetch(process.env.BACK_URL as any)
         .then((res) => res.json())
         .then((items) =>
           items.map((i, idx) => {
@@ -33,7 +33,7 @@ const Home: BlitzPage = () => {
   }
 
   function Kliknij(idx) {
-    fetch(process.env.LISTA_URL + idx)
+    fetch(process.env.LISTA_URL as any + idx)
       .then((res) => res.text())
       .then((d) => setSklad(d)
       )
