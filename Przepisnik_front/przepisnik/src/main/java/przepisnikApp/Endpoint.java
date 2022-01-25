@@ -17,47 +17,27 @@ import java.util.Map;
 
 @Controller
 public class Endpoint extends DBConnection{
-    private final RestTemplate restTemplate;
+    private RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+    private final RestTemplate restTemplate = restTemplateBuilder.build();
     private Map<String, String> env = System.getenv();
-    public Endpoint(RestTemplateBuilder restTemplateBuilder){
-        this.restTemplate = restTemplateBuilder.build();
-    }
+
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     @ResponseBody
     public List<String> requests(@PathVariable int id){
         List<String> res =  new ArrayList<String>();
-        String urlLista = env.get("LISTA_URL") + id;
-/*        WebClient clientLista = WebClient.create();
-        WebClient.ResponseSpec responseSpec = clientLista.get()
-                .uri(urlLista)
-                .retrieve();
-        responseSpec.bodyToMono(String.class).subscribe(
-                responseBodyLista -> res.add(responseBodyLista),
-                error -> error.printStackTrace()
-        );*/
+        String urlLista = env.get("LISTA_URL") + "{id}";
+
         ResponseEntity<String> responseLista = this.restTemplate.getForEntity(urlLista, String.class, id);
         if(responseLista.getStatusCode() == HttpStatus.OK) {
             res.add(responseLista.getBody());
         }
-        String urlOpis = env.get("OPIS_URL") + id;
+        String urlOpis = env.get("OPIS_URL") + "{id}";
         ResponseEntity<String> responseOpis = this.restTemplate.getForEntity(urlOpis, String.class, id);
         if(responseOpis.getStatusCode() == HttpStatus.OK) {
             res.add(responseOpis.getBody());
         }
- /*       WebClient clientOpis = WebClient.create();
-        WebClient.ResponseSpec responseSpecOpis = clientOpis.get()
-                .uri(urlOpis)
-                .retrieve();
 
-        responseSpecOpis.bodyToMono(String.class).subscribe(
-                responseOpis -> res.add(responseOpis),
-                error -> error.printStackTrace()
-        );
-*/
-
-        //res.add(responseBodyLista);
-        //res.add(responseOpis);
         return res;
     }
     @CrossOrigin(origins = "*")
