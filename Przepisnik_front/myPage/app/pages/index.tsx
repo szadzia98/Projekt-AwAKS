@@ -13,16 +13,11 @@ const Home: BlitzPage = () => {
   GenerujListe()
 
   function GenerujListe() {
-    console.log(process.env)
-    if(process.env.BACK_URL === undefined){
-      return 1
-    }
-    else{
     if (Lista.length > 0) {
       return 1
     } else {
       try{
-        fetch("http://" + process.env.BACK_URL as any)
+        fetch("http://przepisnik-svc.labproj22.svc.cluster.local:8080")
           .then((res) => res.json())
           .then((items) =>
             items.map((i, idx) => {
@@ -37,15 +32,15 @@ const Home: BlitzPage = () => {
         }catch{
         console.log(Error)
       }
-    }}
+    }
   }
 
   function Kliknij(idx) {
-    fetch("http://" + process.env.LISTA_URL as any + idx)
+    fetch("http://opis-svc.labproj22.svc.cluster.local:8080/" + idx)
       .then((res) => res.text())
       .then((d) => setSklad(d)
       )
-    fetch("http://" + process.env.OPIS_URL as any + idx)
+    fetch("http://lista-svc.labproj22.svc.cluster.local:8080/" + idx)
       .then((res) => res.text())
       .then((d) => setOpis(d)
       )
