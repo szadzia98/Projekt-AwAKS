@@ -26,11 +26,11 @@ spec:
         - name: USER_DB
           valueFrom:
             secretKeyRef:
-              name: db-secret
+              name: secret-user
               key: USER_DB
         - name: PASSWORD_DB
           valueFrom:
             secretKeyRef:
-              name: db-secret
+              name: secret-user
               key: PASSWORD_DB
 status: {}
