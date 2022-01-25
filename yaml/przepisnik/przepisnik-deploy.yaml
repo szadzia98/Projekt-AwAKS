@@ -15,7 +15,7 @@ spec:
         app: przepisnik-deploy
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/labproj22/przepisnik:2.1
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/przepisnik:3.0
         name: przepisnik-deploy
         ports:
         - containerPort: 8080
