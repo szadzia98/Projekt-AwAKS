@@ -18,21 +18,29 @@ public class Endpoint extends DBConnection{
     @GetMapping("/{id}")
     @ResponseBody
     public List<String> requests(@PathVariable int id){
+        List<String> res =  new ArrayList<String>();
         String urlLista = env.get("LISTA_URL") + id;
         WebClient clientLista = WebClient.create();
         WebClient.ResponseSpec responseSpec = clientLista.get()
                 .uri(urlLista).retrieve();
-        String responseBodyLista = responseSpec.bodyToMono(String.class).block();
+        responseSpec.bodyToMono(String.class).subscribe(
+                responseBodyLista -> res.add(responseBodyLista),
+                error -> error.printStackTrace()
+        );
        // System.out.println(responseBody);
         String urlOpis = env.get("OPIS_URL") + id;
         WebClient clientOpis = WebClient.create();
         WebClient.ResponseSpec responseSpecOpis = clientOpis.get()
                 .uri(urlOpis).retrieve();
-        String responseOpis = responseSpecOpis.bodyToMono(String.class).block();
 
-        List<String> res =  new ArrayList<String>();
-        res.add(responseBodyLista);
-        res.add(responseOpis);
+        responseSpecOpis.bodyToMono(String.class).subscribe(
+                responseOpis -> res.add(responseOpis),
+                error -> error.printStackTrace()
+        );
+
+
+        //res.add(responseBodyLista);
+        //res.add(responseOpis);
         return res;
     }
     @CrossOrigin(origins = "*")
