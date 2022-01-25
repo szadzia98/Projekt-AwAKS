@@ -15,7 +15,7 @@ spec:
         app: front-deploy
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/labproj22/frontend:3.0
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/frontend:3.2
         name: front-deploy
         ports:
         - containerPort: 3000
