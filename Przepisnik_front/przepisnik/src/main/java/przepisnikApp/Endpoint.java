@@ -22,7 +22,8 @@ public class Endpoint extends DBConnection{
         String urlLista = env.get("LISTA_URL") + id;
         WebClient clientLista = WebClient.create();
         WebClient.ResponseSpec responseSpec = clientLista.get()
-                .uri(urlLista).retrieve();
+                .uri(urlLista)
+                .retrieve();
         responseSpec.bodyToMono(String.class).subscribe(
                 responseBodyLista -> res.add(responseBodyLista),
                 error -> error.printStackTrace()
@@ -31,7 +32,8 @@ public class Endpoint extends DBConnection{
         String urlOpis = env.get("OPIS_URL") + id;
         WebClient clientOpis = WebClient.create();
         WebClient.ResponseSpec responseSpecOpis = clientOpis.get()
-                .uri(urlOpis).retrieve();
+                .uri(urlOpis)
+                .retrieve();
 
         responseSpecOpis.bodyToMono(String.class).subscribe(
                 responseOpis -> res.add(responseOpis),
