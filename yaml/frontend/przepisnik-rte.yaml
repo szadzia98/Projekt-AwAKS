@@ -8,7 +8,7 @@ metadata:
 spec:
   host: ""
   port:
-    targetPort: 80
+    targetPort: 3000
   to:
     kind: Service
     name: front-svc

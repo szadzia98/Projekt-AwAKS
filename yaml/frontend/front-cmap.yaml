@@ -5,5 +5,5 @@ metadata:
   labels:
     app: front-deploy
 data:
-  PORT: "80"
+  PORT: "3000"
   BACK_URL: "http://172.30.140.39:8080/"

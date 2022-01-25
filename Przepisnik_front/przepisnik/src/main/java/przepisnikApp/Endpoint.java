@@ -17,10 +17,10 @@ import java.util.Map;
 
 @Controller
 public class Endpoint extends DBConnection{
-    private RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+/*    private RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
     private final RestTemplate restTemplate = restTemplateBuilder.build();
-    private Map<String, String> env = System.getenv();
-
+*/    private Map<String, String> env = System.getenv();
+/*
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     @ResponseBody
@@ -39,7 +39,7 @@ public class Endpoint extends DBConnection{
         }
 
         return res;
-    }
+    }*/
     @CrossOrigin(origins = "*")
     @GetMapping("/")
     @ResponseBody

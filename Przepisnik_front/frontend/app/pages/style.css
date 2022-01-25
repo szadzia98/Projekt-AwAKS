@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family:cursive;
+}
+header{
+    background-color: chocolate;
+    border: solid;
+    height: fit-content;
+}
+#przepisy{
+    display: flex;
+    min-height: 91%;
+}
+#listaPrzepisow{
+    width: 30vw;
+    border-right: black;
+    border-right-style: solid;
+}
+#listaSkladnikow{
+    width: 30vw;
+    border-right: black;
+    border-right-style: solid;
+}
+#opisPrzepisu{
+    width: 40vw;
+    border-right: black;
+    border-right-style: solid;
+}
+#__next{
+    height: inherit;
+}
+.container{
+    height: inherit;
+}
+pre{
+    font-family: cursive;
+    white-space: pre-wrap;
+}
