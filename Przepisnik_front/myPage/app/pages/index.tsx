@@ -13,6 +13,10 @@ const Home: BlitzPage = () => {
   GenerujListe()
 
   function GenerujListe() {
+    if(process.env.BACK_URL === undefined){
+      return 1
+    }
+    else{
     if (Lista.length > 0) {
       return 1
     } else {
@@ -32,7 +36,7 @@ const Home: BlitzPage = () => {
         }catch{
         console.log(Error)
       }
-    }
+    }}
   }
 
   function Kliknij(idx) {
