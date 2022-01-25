@@ -22,10 +22,4 @@ spec:
         envFrom:
         - configMapRef:
             name: lo-cmap
-        env:
-        - name: USER_DB
-          valueFrom:
-            secretKeyRef:
-              name: secret-user
-              key: USER_DB
 status: {}
