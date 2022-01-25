@@ -6,4 +6,6 @@ metadata:
     app: front-deploy
 data:
   PORT: "3000"
-  BACK_URL: "http://172.30.140.39:8080/"
+  BACK_URL: "172.30.140.39:8080/"
+  LISTA_URL: "172.30.172.223:8080/"
+  OPIS_URL: "172.30.243.30:8080/"
