@@ -24,7 +24,7 @@ public class Endpoint extends DBConnection{
                 .uri(urlLista).retrieve();
         String responseBodyLista = responseSpec.bodyToMono(String.class).block();
        // System.out.println(responseBody);
-        String urlOpis = "OPIS_URL" + id;
+        String urlOpis = env.get("OPIS_URL") + id;
         WebClient clientOpis = WebClient.create();
         WebClient.ResponseSpec responseSpecOpis = clientOpis.get()
                 .uri(urlOpis).retrieve();
