@@ -17,7 +17,7 @@ const Home: BlitzPage = () => {
       return 1
     } else {
       try{
-        fetch("http://przepisnik-svc.labproj22.svc.cluster.local:8080")
+        fetch("http://przepisnik-back-labproj22.apps.ocp.lab.cloudpak.site")
           .then((res) => res.json())
           .then((items) =>
             items.map((i, idx) => {
@@ -36,11 +36,11 @@ const Home: BlitzPage = () => {
   }
 
   function Kliknij(idx) {
-    fetch("http://opis-svc.labproj22.svc.cluster.local:8080/" + idx)
+    fetch("http://lista-labproj22.apps.ocp.lab.cloudpak.site/" + idx)
       .then((res) => res.text())
       .then((d) => setSklad(d)
       )
-    fetch("http://lista-svc.labproj22.svc.cluster.local:8080/" + idx)
+    fetch("http://opis-labproj22.apps.ocp.lab.cloudpak.site/" + idx)
       .then((res) => res.text())
       .then((d) => setOpis(d)
       )
