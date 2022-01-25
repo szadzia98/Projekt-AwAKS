@@ -15,7 +15,7 @@ spec:
         app: opis-deploy
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/labproj22/opis:1.1
+      - image: image-registry.openshift-image-registry.svc:5000/labproj22/opis:1.2
         name: opis-deploy
         ports:
         - containerPort: 8080
