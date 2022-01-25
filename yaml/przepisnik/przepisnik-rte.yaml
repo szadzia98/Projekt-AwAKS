@@ -8,7 +8,7 @@ metadata:
 spec:
   host: ""
   port:
-    targetPort: 3000
+    targetPort: 8080
   to:
     kind: Service
     name: przepisnik-svc
