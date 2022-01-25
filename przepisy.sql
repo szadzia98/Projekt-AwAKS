@@ -1,7 +1,7 @@
 CREATE TABLE przepisy (
     nazwa text,
-    opis text,
     skladniki text,
+    opis text,
     id int 
 );
 INSERT INTO przepisy
