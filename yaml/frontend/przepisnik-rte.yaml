@@ -4,9 +4,9 @@ metadata:
   creationTimestamp: null
   labels:
     app: front-deploy
-  name: front-rt
+  name: przepisnik
 spec:
-  host: "przepisnik.apps.cp4apps.cloudpak.site"
+  host: ""
   port:
     targetPort: 80
   to:
