@@ -17,21 +17,22 @@ import java.util.Map;
 
 @Controller
 public class Endpoint extends DBConnection{
-/*    private RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+    private RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
     private final RestTemplate restTemplate = restTemplateBuilder.build();
-*/    private Map<String, String> env = System.getenv();
-/*
+    private Map<String, String> env = System.getenv();
+
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     @ResponseBody
     public List<String> requests(@PathVariable int id){
         List<String> res =  new ArrayList<String>();
+        
         String urlLista = env.get("LISTA_URL") + "{id}";
-
         ResponseEntity<String> responseLista = this.restTemplate.getForEntity(urlLista, String.class, id);
         if(responseLista.getStatusCode() == HttpStatus.OK) {
             res.add(responseLista.getBody());
         }
+        
         String urlOpis = env.get("OPIS_URL") + "{id}";
         ResponseEntity<String> responseOpis = this.restTemplate.getForEntity(urlOpis, String.class, id);
         if(responseOpis.getStatusCode() == HttpStatus.OK) {
@@ -39,7 +40,7 @@ public class Endpoint extends DBConnection{
         }
 
         return res;
-    }*/
+    }
     @CrossOrigin(origins = "*")
     @GetMapping("/")
     @ResponseBody
