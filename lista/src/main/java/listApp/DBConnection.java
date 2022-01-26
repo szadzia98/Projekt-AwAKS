@@ -20,7 +20,7 @@ public class DBConnection {
 
             stmt = c.createStatement();
 
-            String psqlStatment = "SELECT skladniki FROM przepisy WHERE id = '" + id + "'";
+            String psqlStatment = "SELECT * FROM przepisy WHERE id = '" + id + "'";
             ResultSet rs = stmt.executeQuery(psqlStatment);
             while (rs.next()){
                 lista = rs.getString("skladniki");
