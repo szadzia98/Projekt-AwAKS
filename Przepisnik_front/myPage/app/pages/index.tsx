@@ -36,14 +36,13 @@ const Home: BlitzPage = () => {
   }
 
   function Kliknij(idx) {
-    fetch("http://lista-labproj22.apps.ocp.lab.cloudpak.site/" + idx)
-      .then((res) => res.text())
-      .then((d) => setSklad(d)
-      )
-    fetch("http://opis-labproj22.apps.ocp.lab.cloudpak.site/" + idx)
-      .then((res) => res.text())
-      .then((d) => setOpis(d)
-      )
+    fetch("http://przepisnik-back-labproj22.apps.ocp.lab.cloudpak.site/" + idx)
+      .then((res) => res.json())
+      .then((d) => {
+      setSklad(d[0]);
+    setOpis(d[1])
+    }
+   )
   }
   return (
     <div className="container">
